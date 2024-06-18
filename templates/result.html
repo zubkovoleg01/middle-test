@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NumberFinder</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Результат поиска:</h1>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% else %}
+            <div class="card">
+                <div class="card-body">
+                    <p class="card-text">Номер телефона: {{ phone_number }}</p>
+                    <p class="card-text">Оператор: {{ operator }}</p>
+                    <p class="card-text">Регион: {{ region }}</p>
+                </div>
+            </div>
+        {% endif %}
+        <a href="{% url 'number_finder' %}" class="btn btn-primary mt-3">Назад</a>
+    </div>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
